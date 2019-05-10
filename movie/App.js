@@ -44,62 +44,62 @@ export default class App extends Component<Props> {
       currentPage:0,
       dataSource:[
         {
-          image: require('./images/one.jpg'),
+          image: require('./app/images/one.jpg'),
           title:'商品1',
           subTitle:'描述1'
         },
         {
-          image: require('./images/two.jpeg'),
+          image: require('./app/images/two.jpeg'),
           title:'商品2',
           subTitle:'描述2'
         },
         {
-          image: require('./images/three.jpg'),
+          image: require('./app/images/three.jpg'),
           title:'商品3',
           subTitle:'描述3',
         },
         {
-          image: require('./images/one.jpg'),
+          image: require('./app/images/one.jpg'),
           title:'商品4',
           subTitle:'描述4'
         },
         {
-          image: require('./images/two.jpeg'),
+          image: require('./app/images/two.jpeg'),
           title:'商品5',
           subTitle:'描述5'
         },
         {
-          image: require('./images/three.jpg'),
+          image: require('./app/images/three.jpg'),
           title:'商品6',
           subTitle:'描述6'
         },
         {
-          image: require('./images/one.jpg'),
+          image: require('./app/images/one.jpg'),
           title:'商品7',
           subTitle:'描述1'
         },
         {
-          image: require('./images/two.jpeg'),
+          image: require('./app/images/two.jpeg'),
           title:'商品8',
           subTitle:'描述2'
         },
         {
-          image: require('./images/three.jpg'),
+          image: require('./app/images/three.jpg'),
           title:'商品9',
           subTitle:'描述3'
         },
         {
-          image: require('./images/one.jpg'),
+          image: require('./app/images/one.jpg'),
           title:'商品10',
           subTitle:'描述4'
         },
         {
-          image: require('./images/two.jpeg'),
+          image: require('./app/images/two.jpeg'),
           title:'商品11',
           subTitle:'描述5'
         },
         {
-          image: require('./images/three.jpg'),
+          image: require('./app/images/three.jpg'),
           title:'商品12',
           subTitle:'描述6'
         }
@@ -189,7 +189,6 @@ export default class App extends Component<Props> {
       onRefresh={this._onRefresh}
     />
   }
-
 
   render() {
     let {fadeAnim} = this.state;
