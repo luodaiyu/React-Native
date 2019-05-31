@@ -20,11 +20,11 @@ module.exports = {
     },
     optimization: {//优化项
         minimizer: [
-            new TerserJSPlugin({
-                cache:true,//启用文件缓存。缓存目录的默认路径：node_modules/.cache/terser-webpack-plugin
-                parallel:true,//使用多进程并行运行来提高构建速度 强烈建议
-                sourceMap:true//源码映射
-            }),
+            // new TerserJSPlugin({
+            //     cache:true,//启用文件缓存。缓存目录的默认路径：node_modules/.cache/terser-webpack-plugin
+            //     parallel:true,//使用多进程并行运行来提高构建速度 强烈建议
+            //     sourceMap:true//源码映射
+            // }),
             new OptimizeCSSAssetsPlugin({})
         ]
     },
@@ -44,10 +44,38 @@ module.exports = {
 
     ],
     module: {//模块
-        rules: [//解析以.css结尾的文件，根据特定的loader
+        rules: [
+            // {
+            //     test:/\.js$/,
+            //     use:{
+            //         loader:'eslint-loader',//校验eslint规范,yarn add eslint eslint-loader -D
+            //         options:{
+            //             enforce:'pre'//强制当前loader在 '普通loader' 前执行
+            //         }
+            //     }
+            // },
+            {
+                test:/\.js$/, //普通loader 
+                use:{
+                    loader:'babel-loader',
+                    options:{
+                        presets:[//把es6转为es5
+                            '@babel/preset-env'
+                        ],
+                        plugins:[
+                            ['@babel/plugin-proposal-decorators',{ "legacy": true }],//转化装饰器语法
+                            ['@babel/plugin-proposal-class-properties', { "loose" : true }],//解析高级语法如 class
+                            "@babel/plugin-transform-runtime",
+                        ]
+                    }
+                },
+                include:path.resolve(__dirname,'src'),//包括这个路径下的文件
+                exclude:/node_modules/,//排除这个文件下的文件
+            },
+            //解析以.css结尾的文件，根据特定的loader
             //loader特点 希望单一
             //css-loader 解析@import语法    style-loader css插入head标签中
-            //lopader用法： 字符串只用一个loader。多个loader需要[]。顺序默认是从右到左执行
+            //lopader用法： 字符串只用一个loader。多个loader需要[]。顺序默认是从右到左执行 从下到上
             // { test: /\.css$/, use:['style-loader','css-loader']},
             //loader还可以写成对象形式。
             {
