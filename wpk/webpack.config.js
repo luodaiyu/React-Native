@@ -17,8 +17,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'bundle.[hash:8].js',//打包后的文件名//加上[hash]是每次打包后都生成一个新的文件，不会覆盖之前的文件.:8只显示8位hash值
-        path: path.resolve(__dirname, 'build')//路径必须是一个绝对路径
-
+        path: path.resolve(__dirname, 'build'),//路径必须是一个绝对路径
+        // publicPath:'http:www.baidu.com',//自动在引入资源的地方加上域名。若需要只在引入图片地址的地方加上，则需要在图片的loader处加上publicPath
     },
     optimization: {//优化项
         minimizer: [
@@ -41,7 +41,7 @@ module.exports = {
             // hash: true//打包后的文件加上hash挫
         }),
         new MiniCssExtractPlugin({
-            filename: 'main.css'
+            filename: 'css/main.css'
         }),
         //2 math
         new webpack.ProvidePlugin({//在每个模块都注入$
@@ -50,6 +50,25 @@ module.exports = {
     ],
     module: {//模块
         rules: [
+            {
+                test:/\.html$/,
+                use:'html-withimg-loader'
+            },
+            {
+                test:/\.(png|jpg|gif)$/,
+                // use:'file-loader'
+                //做一个限制 当我们的图片小于多少k时，使用base64来转化
+                //否者用file-loader产生真实的图片
+                use:{
+                    loader:'url-loader',
+                    options:{
+                        limit:1,
+                        outputPath:'/img/',//产出呃文件应该放到img/目录下
+                        publicPath:'http:www.baidu.com',
+                    }
+                }
+            },
+
             //1 math
             // {
             //     test:require.resolve('jquery'),
