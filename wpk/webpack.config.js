@@ -4,6 +4,8 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 let MiniCssExtractPlugin = require('mini-css-extract-plugin');//抽离css到单独的文件
 const TerserJSPlugin = require("terser-webpack-plugin");//压缩优化js代码
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");//压缩css代码
+//2 math
+const webpack = require('webpack');
 module.exports = {
     devServer: {//开发服务器配置 
         port: '3000',
@@ -41,10 +43,19 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'main.css'
         }),
-
+        //2 math
+        new webpack.ProvidePlugin({//在每个模块都注入$
+            $:'jquery'
+        })
     ],
     module: {//模块
         rules: [
+            //1 math
+            // {
+            //     test:require.resolve('jquery'),
+            //     use:'expose-loader?$'//匹配require('jquery')时，把它暴露出来为$
+            // },
+
             // {
             //     test:/\.js$/,
             //     use:{
