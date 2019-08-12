@@ -52,7 +52,7 @@ module.exports = {
         rules: [
             {
                 test:/\.html$/,
-                use:'html-withimg-loader'
+                use:'html-withimg-loader'//处理html，以支持直接在html中使用img的src加载图片
             },
             {
                 test:/\.(png|jpg|gif)$/,

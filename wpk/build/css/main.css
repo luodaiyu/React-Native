@@ -1,0 +1,9 @@
+body{
+    background: yellow
+}
+body{
+    background: red;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background:url(http:www.baidu.com/a7e5ef144e74967f0fae41110fa456f3.jpg);
+}

@@ -1,18 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>rnweb</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>*{font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;}</style>
-<link href="main.css" rel="stylesheet"></head>
-<style type="text/css">
-body{
-    background: pink
-}
-</style>
-<body>
-<!--模版-->
-<div>hello webpack</div>
-<script type="text/javascript" src="bundle.83ab70d1.js"></script></body>
-</html>
+<!DOCTYPE html><html lang="en"><head>    <meta charset="utf-8">    <title>rnweb</title>    <meta name="viewport" content="width=device-width, initial-scale=1">    <style>*{font-family: -apple-system, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;}</style><link href="css/main.css" rel="stylesheet"></head><style type="text/css">body{    background: pink}</style><body><!--模版--><div>hello webpack</div><script type="text/javascript" src="bundle.fd73b646.js"></script></body></html>
